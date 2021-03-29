@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <STYLE>
+        .container {
+            display: grid;
+            grid-template-areas:
+              "header"
+              "container"
+              "footer";
+        }
+        .header {
+            text-align: center;
+        }
+        p {
+            padding: 0;
+            margin: 0;
+        }
+        #survey-form {
+            padding: 15px;
+            background: #DCCC77;
+            margin: 0 auto;
+            width: 50vmin;
+        }
+        input[type=text] {
+            width: 100%;
+            margin: 5px auto;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type=email] {
+            width: 100%;
+            margin: 5px auto;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type=number] {
+            width: 100%;
+            margin: 5px auto;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .clue {
+            color: rgba(0, 0, 0, 60%);
+        }
+        select {
+            display:inline-block;
+            width: 100%;
+            margin: 5px auto;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .checkbox-group {
+            display: grid;
+            width: 100%;
+            grid-template-areas:
+              "label label label label"
+              "label label label label"
+              ;
+        }
+        textarea {
+            width: 100%;
+            margin: 5px auto;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+        button {
+            color: #757575;
+            float: right;
+            margin: 5px auto;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+    </STYLE>
+    <title>Survey Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title">意見調查表</h1>
+            <p id="description">謝謝你抽出時間填寫</p>
+        </header>
+        <form id="survey-form">
+            <div class="form-group">
+                <label id="name-label" for="name">角色ID:</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="輸入角色名稱" required>
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="email">電子信箱:</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="輸入電子信箱" required>
+            </div>
+            <div class="form-group">
+                <label id="number-label" for="number">年齡<span class="clue">(可選擇):</span></label>
+                <input type="number" name="age" id="number" min="10" max="100" class="form-control" placeholder="請輸入年齡">
+            </div>
+            <div class="form-group">
+                <label for="dropdown">最喜歡的職業?</label>
+                <select id="dropdown" name="role" class="form-control">
+                    <option disabled selected value>選擇最喜歡的職業</option>
+                    <option value="swordman">劍士</option>
+                    <option value="mage">法師</option>
+                    <option value="archer">弓箭手</option>
+                    <option value="merchant">商人</option>
+                    <option value="thief">盜賊</option>
+                    <option value="acolyte">服事</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>每天最期待的事情是什麼?<span class="clue">(可複選)</span></p>
+                <div class="checkbox-group">
+                    <label>
+                        <input name="prefer" value="道館" type="checkbox" class="input-control">道館
+                    </label>
+                    <label>
+                        <input name="prefer" value="副本" type="checkbox" class="input-control">副本
+                    </label>
+                    <label>
+                        <input name="prefer" value="公會佔領" type="checkbox" class="input-control">工會佔領
+                    </label>
+                    <label>
+                        <input name="prefer" value="波利賽跑" type="checkbox" class="input-control">波利賽跑
+                    </label>
+                    <label>
+                        <input name="prefer" value="炸彈波利" type="checkbox" class="input-control">炸彈波利
+                    </label>
+                    <label>
+                        <input name="prefer" value="極速快感" type="checkbox" class="input-control">極速快感
+                    </label>
+                    <label>
+                        <input name="prefer" value="眼手協調" type="checkbox" class="input-control">眼手協調
+                    </label>
+                    <label>
+                        <input name="prefer" value="魔物決鬥" type="checkbox" class="input-control">魔物對決
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <p>遊玩滿意度</p>
+                <label type="user-recommend">
+                    <input name="user-recommend" value="5" type="radio" class="input-radio" checked>非常滿意
+                </label>
+                <label type="user-recommend">
+                    <input name="user-recommend" value="4" type="radio" class="input-radio" checked>滿意
+                </label>
+                <label type="user-recommend">
+                    <input name="user-recommend" value="3" type="radio" class="input-radio" checked>普通
+                </label>
+                <label type="user-recommend">
+                    <input name="user-recommend" value="2" type="radio" class="input-radio" checked>不滿意
+                </label>
+                <label type="user-recommend">
+                    <input name="user-recommend" value="1" type="radio" class="input-radio" checked>非常不滿意
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="comments">希望新增什麼功能?</label>
+                <textarea id="comments" class="input-textarea" name="comment" placeholder="輸入你的建議..."></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit" class="submit-button">送出</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

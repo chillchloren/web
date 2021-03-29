@@ -1,0 +1,299 @@
+/*Now the CSS*/
+* {margin: 0; padding: 0;}
+
+.tree ul, .tree2 ul {
+	padding-top: 20px; position: relative;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.tree li, .tree2 li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after, .tree2 li::before, .tree2 li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 1px solid #ccc;
+	width: 50%; height: 20px;
+}
+.tree li::after, .tree2 li::after{
+	right: auto; left: 50%;
+	border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before, .tree2 li:only-child::after, .tree2 li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child, .tree2 li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after, .tree2 li:first-child::before, .tree2 li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before, .tree2 li:last-child::before{
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after, .tree2 li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before, .tree2 ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 1px solid #ccc;
+	width: 0; height: 20px;
+}
+
+.tree li a, .tree2 li a{
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: #666;
+	font-family: arial, verdana, tahoma;
+	font-size: 20px;
+	display: inline-block;
+	
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a, .tree2 li a:hover, .tree2 li a:hover+ul li a {
+	background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before,
+.tree2 li a:hover+ul li::after, 
+.tree2 li a:hover+ul li::before, 
+.tree2 li a:hover+ul::before, 
+.tree2 li a:hover+ul ul::before{
+	border-color:  #94a0b4;
+}
+
+/*Thats all. I hope you enjoyed it.
+Thanks :)*/
+
+
+
+
+
+
+@media (max-width: 800px) {  
+/* 最大高度800px內的設備使用以下規則 */
+/* 也可用 min-height 規定最小高度以上？？ */
+	#navbar {
+		position: absolute !important;
+		top: 0;
+		height: 190px !important;
+		width: 100% !important;
+		overflow: auto;
+		border-bottom: 2px solid #A6A6A6;
+
+	}
+	#navbar > ul {
+		height: 100% !important;
+		text-align: center;
+		
+	}
+	#navbar > ul > li {
+		border-top: none !important;
+		border-bottom: 1px solid #A6A6A6;
+		
+	}
+	#main-doc {
+		margin-top: 200px;
+		margin-left: 0px !important;
+		display: block;
+		margin-bottom: 100px;
+	}
+	.main-section {
+		
+		max-width: 100% !important;
+		margin: auto;
+	}
+	.main-section > header {
+		text-align: center;
+		font-size: 40px;
+		min-width: 270px;
+	}
+	article {
+		width: inherit;
+		
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+	table {
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+	
+	article > p, ul{
+		text-align: center;
+	}
+
+
+}
+
+
+
+
+
+
+
+body {
+	background: #F2F2F2;
+	font-family: cursive;
+	font-size: 1.3em;
+	color: #666;
+}
+
+header {
+	color: #595959;
+}
+
+
+#navbar > header {
+	font-size: 1.5em;
+	text-align: center;
+	border-bottom: 1px solid #A6A6A6;
+}
+
+
+#navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 180px;
+	border-right: 2px solid #A6A6A6;
+
+}
+
+#navbar > ul {
+	height: 80%;
+	list-style-type: none;
+}
+
+#navbar > ul > li{
+	display: inline-block;
+	width: 100%;
+	font-size: 24px;
+	padding-top: 8px
+	list-style-position: inside; /* 不曉得為什麼border 用這個才能顯示 */
+	border-top: 1px solid #A6A6A6;
+}
+
+
+
+.nav-link {
+	text-decoration: none;
+	color: #595959;
+}
+
+.nav-link:hover {
+	color: #0D0D0D;
+}
+
+
+#main-doc {
+	margin-left: 220px;
+}
+
+.main-section {
+	
+	max-width: 80%;
+}
+
+.main-section > header {
+	font-size: 40px;
+	min-width: 270px;
+	border-bottom: 1px solid #A6A6A6;
+}
+
+
+#遊戲介紹 > article {
+	margin-bottom: 20px;
+}
+
+
+.intro-tbl, .sys_rqmts_tbl {
+	font-size: 24px;
+	border-collapse: collapse;
+}
+
+td {
+	padding: 10px;
+}
+
+.tree, .tree2 {
+	display: flex;
+}
+
+.tree2 {
+	margin-top: 80px;
+}
+
+article, .intro-tbl {
+	margin-bottom: 50px;
+}
+
+#dungeon-all {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dungeon-desc {
+	padding: 15px;
+	border-bottom: 1px solid #A6A6A6;
+	
+}
+
+li {
+	list-style: none;
+}
+
+a:link {
+	color: #595959;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #0D0D0D;
+}
+
+
+

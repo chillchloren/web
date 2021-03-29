@@ -1,0 +1,176 @@
+:root {
+	--main-black: #101010;
+	--main-gray-1: #202020;
+	--main-gray-2: #444444;
+	--main-gray-3: #9DA5A2;
+	--main-white-1: #E0E4D6;
+	--main-white-2: #F8F8F8;
+	--main-white-3: #FBFBFB;
+	--main-green: #60CAAD;
+	--main-orange: #C19A60;
+}
+
+
+body {
+	display: flex;
+	flex-direction: column;
+	/*flex-wrap: nowrap;*/
+	/*justify-content: center;*/
+	/*align-content: center;*/
+	/*align-items: stretch;*/
+	/*overflow: auto;*/
+	/*justify-content: space-around;*/
+	font-family: 'Poppins', sans-serif;
+	color: var(--main-white-1);
+	/*background: var(--main-white-3);*/
+	background: red;
+	top: 0;
+	left: 0;
+	margin: auto;
+	width: 100%;
+}
+h1 {
+	color: var(--main-orange);
+}
+
+/* welcome-section */
+#welcome-section {
+    height: 100vh;
+    width: inherit;
+}
+#welcome-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/*border: 2px solid red; */
+	margin-top: 0 auto;
+	background: var(--main-gray-1);
+	height: 100vh;
+	width: 100%;
+	padding-top: 3rem;
+}
+#header-img {
+	height: calc(100% - 50rem);
+	width: 100%;
+	/*max-width: 2999px;*/
+	background-image: url(img/pexels-neosiam-593650.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	/*background-position-y: -60px;*/
+    background-size: 1920px auto;
+}
+.header {
+	text-align: center;
+	margin-top: 50px;
+	padding: 0;
+	
+}
+.header > h1 {
+	font-size: 50px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+.header > p {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+}
+
+#navbar {
+	position: fixed;
+	display: flex;
+	width: 100%;
+	height: 4rem;
+	background: var(--main-black);
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	z-index: 999; 
+}
+
+nav > .btn {
+	font-size: 200%;
+	text-align: center;
+	flex: 1;
+	padding: 15px 0;
+}
+
+a:link, a:visited {
+	color: var(--main-white-1);
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FFFFFF;
+}
+/* end welcome-section */
+
+
+
+/* start projects */
+#projects {
+	width: 100%;
+	background: var(--main-gray-2);
+	margin: 45px auto;
+	/*border: 2px solid green;*/
+}
+.projects-section-header {
+	text-align: center;
+	font-size: 45px;
+	color: #D9AE6C;
+	margin-bottom: 2rem;
+	padding: 0;
+}
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 2rem;
+	box-shadow: 
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	margin-bottom: 5rem;
+	padding: 0;
+	/*border: 2px solid black;*/
+}
+.project-tile {
+	display: flex;
+	flex-direction: column;
+	/*flex-wrap: nowrap;*/
+	align-items: center;
+	background: var(--main-gray-1);
+	margin: 1rem;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	/*border: 2px solid red;*/
+	border-radius: 5px;
+}
+.project-image {
+	width: 100%;
+	height: 20rem;
+	object-fit: cover;  /*cover/contain/fill/nonescale-down/*/
+	object-position: center;
+	/*border: 2px solid blue;*/
+	margin: 0;
+	padding: 0;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.code {
+  color: var(--main-gray-1);  /*原本是跟背景同色*/
+  transition: color 0.3s ease-out;
+}
+.project-tile:hover .code { /*就我的理解 指標移動到project-tile上時去改變.code */
+	color: var(--main-orange);
+}
+/* end projects */
+
+
+/*<!-- start contact -->*/
+#contact {
+	background: var(--main-gray-1);
+}
+
+
+
+

@@ -1,0 +1,242 @@
+
+body {
+	background: #EEEEEE;
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+}
+@media (max-height: 800px) {  
+/* 最大高度800px內的設備使用以下規則 */
+/* 也可用 min-height 規定最小高度以上？？ */
+	section > h1 { 
+		font-size: 30px !important;
+	}
+	
+	h2 {
+		font-size: 14px;  
+	}
+    p {
+      font-size: 10px;
+    }
+ }
+
+
+#header {
+	display: flex;
+	width: 100%;
+	top: 0;
+	padding:0 0px; 
+	min-height: 70px;
+	position: fixed; /* 固定在頂 */
+	align-items: center;
+	justify-content: space-around;
+}
+
+.logo {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+#header-img {
+	width: 40px;
+	margin: auto;
+}
+
+#nav-bar {
+	flex: 15;
+
+}
+ul {
+	float: right;	
+}
+li {
+	list-style: none;
+	float: left;
+	margin: 10px;
+}
+.nav-link {
+	font-size: 20px;
+}
+
+
+.container {
+	margin: 0 auto;
+}
+
+
+#hero {
+	margin: 100px auto 0px auto;
+	text-align: center;
+}
+#hero > h1 {
+	font-size: 50px;
+	margin-bottom: 0px;
+	margin-top: 50px 
+}
+
+#form {
+	
+}
+
+#email{
+	width: 50vmin;
+	height: 19px;
+	border-radius: 3px;
+	border: 1px solid transparent;
+}
+.btn {
+	color: #eee;
+	background: #003F6D;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+
+#feature {
+	margin: 50px auto 10px auto;
+}
+.grid {
+	display: flex;
+	margin: 0 auto;
+	width: 70%;
+}
+.icon {
+	color: #215889;
+	flex: 1;
+	margin: auto;
+}
+i {
+	margin: auto;
+	width: 50px;
+}
+.desc {
+	display: flex;
+	flex-direction: column;
+	flex: 15;
+	padding-left: 7%;
+}
+
+h2 {
+	margin: 0px;
+	padding: 0px; 
+}
+
+p {
+	height: 50px;
+	font-size: 16px;
+	margin: 3px;
+	padding: 0px;
+}
+
+#how-it-work {
+	margin-top: 50px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+#video {
+	width: 512px;
+	height: 288px;
+}
+
+
+
+#pricing{
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	text-align: center;
+}
+
+
+.product {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	border: 1px solid #215989;
+	width: calc((100% / 3) - 5%);
+	margin: 3px auto 3px auto;
+	white-space: pre-wrap;
+}
+
+.product > h2 {
+	font-size: 50px;
+	margin: 0;
+	padding: 0;
+}
+
+.leave {
+	width: 100%;
+	font-size: 30px;
+	color: #eee;
+	background: #215989;
+	padding: 10px 0;
+}
+
+.product > ol {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	
+	
+	padding-right: 10px;
+	padding-left: 10px;
+
+}
+
+.product > ol > li {
+	
+	width: 100%;
+}
+
+.product > .btn {
+	width: 50%;
+	font-size: 18px;
+	background: #215989;
+	padding: 10px;
+}
+
+
+
+footer {
+	display: flex;
+	width: 100%;
+	margin-top: 50px;
+	flex-direction: row-reverse;
+	background: #AFAFAF;
+	align-items: center;
+}
+
+footer > span {
+	display: block;
+	flex: 5;
+	background: #AFAFAF;
+	margin-left: 20px;
+}
+
+footer > ul {
+	flex: 5;
+	background: #AFAFAF;
+	margin: auto 20px 0px auto;
+}
+
+footer > ul > li {
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
